@@ -1,6 +1,8 @@
 const root = document.getElementById('root')
 const length = document.getElementById('length')
-const URL="https://fakestoreapi.com/products"
+
+const URL="https://fakestoreapi.com/products";
+
 async function getData(){
     try {
         let response = await fetch(URL)
@@ -19,7 +21,7 @@ function showData(arr){
     let container = document.createElement('div')
     container.className='container'
     let category=document.createElement('h4')
-    category.innerText="Category : "+el.category
+    category.innerText="Category : "+el.category[0].toUpperCase()+el.category.slice(1)
     let des=document.createElement('p')
     des.innerText="Description : "+el.description.slice(0,20)
     let image = document.createElement('img')
