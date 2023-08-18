@@ -31,10 +31,15 @@ The project's directory structure will look like this:
 
 Copy code
 fake-store-api-project/
+
 ├── index.html
+
 ├── styles.css
+
 ├── script.js
+
 └── README.md
+
 index.html: This file contains the HTML structure of your web application, including placeholders for displaying product information.
 styles.css: This file contains the CSS styles that define the appearance of your web application.
 script.js: This file contains the JavaScript code responsible for making API requests and updating the UI.
