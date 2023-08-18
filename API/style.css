@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+}
+h2{
+    text-align: right;
+}
+#root{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+}
+.container{
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+.container img{
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
