@@ -7,13 +7,44 @@
     <title>Fake Store | API</title>
   </head>
   <body>
-    <h1>FAKE STORE API</h1>
-    <a  href="cart.html"><h3>Go to cart</h3></a>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-      corporis
-    </p>
-    <h2 id="length"></h2>
+    <nav>
+      <div class="logo">
+        <img
+          src="https://i.pinimg.com/originals/82/dc/08/82dc088ed73f41d8756a3f1e9035d2c6.png"
+          alt=""
+        />
+        <h3>Sharma Stores</h3>
+      </div>
+      <div class="auth">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="">Login</a></li>
+          <li><a href="">Signup</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="index-info">
+      <h2 id="length"></h2>
+      <div>
+        <label>Sort By Price : </label>
+        <select id="sorting-price">
+          <option value="">Choose...</option>
+          <option value="high-to-low">High to Low</option>
+          <option value="low-to-high">Low to High</option>
+        </select>
+      </div>
+      <div>
+        <label>Sort By Category : </label>
+        <select id="sorting-category">
+          <option value="">Choose...</option>
+          <option value="electronics">Electronics</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="men's-clothing">Men's clothing</option>
+          <option value="Women's-clothing">Women's clothing</option>
+        </select>
+      </div>
+    </div>
     <hr />
     <div id="root"></div>
     <script src="script.js"></script>

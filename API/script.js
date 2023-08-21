@@ -1,11 +1,54 @@
 const root = document.getElementById("root");
 const length = document.getElementById("length");
+const sortedPrice = document.getElementById("sorting-price")
+const sortingCategory = document.getElementById("sorting-category")
+
+sortedPrice.addEventListener("change",()=>{
+  let sort_by= sortedPrice.value
+  getData(sort_by)
+})
+
+sortingCategory.addEventListener('change',()=>{
+  let sort_category = sortingCategory.value
+  getData(sort_category)
+})
+
 
 const URL = "https://fakestoreapi.com/products";
-async function getData() {
+
+async function getData(query="") {
+  console.log(query)
   try {
     let response = await fetch(URL);
     let data = await response.json();
+
+    if(query==='high-to-low'){
+      data.sort((a,b)=> b.price-a.price)
+    }
+    else if(query==='low-to-high'){
+      data.sort((a,b)=>a.price - b.price)
+    }
+    else if(query==="men's-clothing"){
+     let menz = data.filter((el)=>el.category==="men's clothing")
+     showData(menz);
+     return
+    }
+    else if(query==="Women's-clothing"){
+      let womenz = data.filter((el)=>el.category==="women's clothing")
+      showData(womenz);
+      return
+     }
+     else if(query==="electronics"){
+      let electronics = data.filter((el)=>el.category==="electronics")
+      showData(electronics);
+      return
+     }
+     else if(query==="jewelery"){
+      let jewelery = data.filter((el)=>el.category==="jewelery")
+      showData(jewelery);
+      return
+     }
+
     showData(data);
   } catch (error) {
     console.log(error.message);
@@ -14,6 +57,8 @@ async function getData() {
 getData();
 
 function showData(arr) {
+  console.log(arr)
+  root.innerHTML=""
   length.innerText = `You have ${arr.length} item's in your store`;
   arr.map((el, id) => {
     let container = document.createElement("div");
@@ -41,6 +86,7 @@ function showData(arr) {
 }
 
 let cartArr = [];
+
 function cartFunction(el, id) {
   alert("Successfully added Item : " + el.category + " in your cart");
   cartArr.push(el);

@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Fake Store | CART</title>
-</head>
-<body>
-    <h1>CART</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <a  href="index.html"><h3>Go to Store</h3></a>
-    <h2 id="cart-count">You have 0 products in Your cart</h2>
-    <h3>Your Cart Total : <span id="bill">₹ 0 /-</span></h3>
-    <hr>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">
+        <div class="logo">
+          <img
+            src="https://i.pinimg.com/originals/82/dc/08/82dc088ed73f41d8756a3f1e9035d2c6.png"
+            alt=""
+          />
+          <h3>Sharma Stores</h3>
+        </div>
+      </a>
+      <div class="auth">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="">Login</a></li>
+          <li><a href="">Signup</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="info-cart">
+      <h3 id="cart-count">You have 0 products in Your cart</h3>
+      <h3>Your Cart Total : <span id="bill">₹ 0 /-</span></h3>
+    </div>
+    <hr />
     <div id="cart-root"></div>
     <script src="cart.js"></script>
-</body>
+  </body>
 </html>
