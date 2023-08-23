@@ -50,11 +50,12 @@
   font-size: 16px;
  }
    
- select{
+ select,input{
   padding: 5px;
-  width: 51%;
+  width: 40%;
   border-radius:20px ;
  }
+
 
 
 
@@ -130,6 +131,12 @@ a{
   .info-cart h3:nth-child(1){
    margin-bottom: -0.3rem;
   }
+  select{
+    padding: 5px;
+    width: 40%;
+    border-radius:20px ;
+    margin: 3px 0 5px 0;
+   }
 }
 @media (max-width: 482px) {
   #root,#cart-root {
@@ -163,4 +170,10 @@ a{
   .info-cart h3:nth-child(1){
    margin-bottom: -0.3rem;
   }
+  select{
+    padding: 5px;
+    width: 40%;
+    border-radius:20px ;
+    margin: 3px 0 5px 0;
+   }
 }

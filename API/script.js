@@ -1,54 +1,49 @@
 const root = document.getElementById("root");
 const length = document.getElementById("length");
-const sortedPrice = document.getElementById("sorting-price")
-const sortingCategory = document.getElementById("sorting-category")
+const sortedPrice = document.getElementById("sorting-price");
+const sortingCategory = document.getElementById("sorting-category");
 
-sortedPrice.addEventListener("change",()=>{
-  let sort_by= sortedPrice.value
-  getData(sort_by)
-})
+const searchProd = document.getElementById("search-text");
 
-sortingCategory.addEventListener('change',()=>{
-  let sort_category = sortingCategory.value
-  getData(sort_category)
-})
+searchProd.addEventListener("input", () => {
+  let product = searchProd.value;
+  getData(null, product);
+});
 
+sortedPrice.addEventListener("change", () => {
+  let sort_by = sortedPrice.value;
+  getData(sort_by);
+});
+sortingCategory.addEventListener("change", () => {
+  let sort_category = sortingCategory.value;
+  getData(sort_category);
+});
 
 const URL = "https://fakestoreapi.com/products";
 
-async function getData(query="") {
-  console.log(query)
+async function getData(query = "", product = "") {
   try {
     let response = await fetch(URL);
     let data = await response.json();
-
-    if(query==='high-to-low'){
-      data.sort((a,b)=> b.price-a.price)
+    if (product) {
+      data = data.filter((el) =>
+        el.title.toLowerCase().includes(product.toLowerCase())
+      );
+    } else {
+      if (query === "high-to-low") {
+        data.sort((a, b) => b.price - a.price);
+      } else if (query === "low-to-high") {
+        data.sort((a, b) => a.price - b.price);
+      } else if (query === "men's-clothing") {
+        data = data.filter((el) => el.category === "men's clothing");
+      } else if (query === "Women's-clothing") {
+        data = data.filter((el) => el.category === "women's clothing");
+      } else if (query === "electronics") {
+        data = data.filter((el) => el.category === "electronics");
+      } else if (query === "jewelery") {
+        data = data.filter((el) => el.category === "jewelery");
+      }
     }
-    else if(query==='low-to-high'){
-      data.sort((a,b)=>a.price - b.price)
-    }
-    else if(query==="men's-clothing"){
-     let menz = data.filter((el)=>el.category==="men's clothing")
-     showData(menz);
-     return
-    }
-    else if(query==="Women's-clothing"){
-      let womenz = data.filter((el)=>el.category==="women's clothing")
-      showData(womenz);
-      return
-     }
-     else if(query==="electronics"){
-      let electronics = data.filter((el)=>el.category==="electronics")
-      showData(electronics);
-      return
-     }
-     else if(query==="jewelery"){
-      let jewelery = data.filter((el)=>el.category==="jewelery")
-      showData(jewelery);
-      return
-     }
-
     showData(data);
   } catch (error) {
     console.log(error.message);
@@ -57,8 +52,7 @@ async function getData(query="") {
 getData();
 
 function showData(arr) {
-  console.log(arr)
-  root.innerHTML=""
+  root.innerHTML = "";
   length.innerText = `You have ${arr.length} item's in your store`;
   arr.map((el, id) => {
     let container = document.createElement("div");
