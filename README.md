@@ -1,4 +1,4 @@
-#Fake Store API Project
+## **Fake Store API Project**
 
 This project is a part of the curriculum for teaching API integration to students. The goal of this project is to introduce students to working with APIs by using the Fake Store API. In this project, students will create a basic web application using HTML, CSS, and JavaScript to interact with the Fake Store API and display information about various products.
 
