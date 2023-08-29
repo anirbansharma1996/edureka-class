@@ -15,9 +15,16 @@
       molestiae!</marquee
     >
     <hr />
-    <h2 id="news-count">You have 60 News</h2>
+    <select id="limit-result">
+      <option value="" disabled selected>Limit Results</option>
+      <option value="3">3 news per page</option>
+      <option value="6">6 news per page</option>
+      <option value="9">9 news per page</option>
+      <option value="12">12 news per page</option>
+    </select>
+    <h2 id="news-count"> 0 News</h2>
     <div id="root"></div>
-
+    <div id="page"></div>
     <script src="script.js"></script>
   </body>
 </html>

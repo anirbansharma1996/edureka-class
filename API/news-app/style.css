@@ -10,7 +10,7 @@ img {
 }
 
 .main,.deatils-main {
-  padding: 10px;
+  padding: 8px;
   margin: 1rem 0;
   border-radius: 20px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -31,7 +31,15 @@ h3 {
 p {
   font-size: 10px;
 }
-#root,#details-root {
+#root {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+#details-root{
   width: 90%;
   margin: auto;
 }
@@ -55,4 +63,13 @@ button{
 }
 h4{
   font-weight: 400;
+}
+.page_div{
+  display: flex;
+  justify-content: center;
+}
+select{
+  padding: 10px;
+  border-radius: 10px;
+
 }
