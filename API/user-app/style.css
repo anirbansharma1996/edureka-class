@@ -1,0 +1,38 @@
+*{
+    text-align: center;
+}
+#root{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    width: 90%;
+    margin: auto;
+    gap: 10px;
+   
+}
+.main{
+    padding: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+.main button{
+    padding: 10px;
+    color: aliceblue;
+    background-color: #a52a2a;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+  
+}
+ @media (max-width:482px){
+    #root{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        width: 90%;
+        margin: auto;
+        gap: 10px;
+       
+    }
+ }
