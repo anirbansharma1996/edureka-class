@@ -1,0 +1,49 @@
+
+.poster{
+    width: 400px;
+    height: auto;
+}
+#root{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+}
+.main{
+    padding: 10px;
+    border: 1px solid;
+}
+.main img{
+    width: 100px;
+    height: 100px;
+}
+
+.main_solo{
+    display: flex;
+    justify-content:space-evenly ;
+    gap: 10px;
+}
+
+.main_solo img{
+    width: 300px;
+    height: 300px;
+}
+.button_div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.book_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .main_solo{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content:space-evenly ;
+        align-items: center;
+    }
+}
